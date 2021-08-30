@@ -1,0 +1,8 @@
+
+<div class="container">
+  <div class="col-50" layout="row" layout-align="center center">
+<div *ngIf="currentBurrito$ | async as burrito">
+  <burritos-burrito-info [burrito]="currentBurrito$ | async"></burritos-burrito-info>
+</div>
+</div>
+</div>

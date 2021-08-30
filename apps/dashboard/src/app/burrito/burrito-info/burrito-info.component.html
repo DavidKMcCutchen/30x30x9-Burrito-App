@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{burrito?.title}}</mat-card-title>
+    <mat-card-subtitle>Burrito Directory</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <h3 matLine>{{burrito?.title}}</h3>
+    <p matLine> Type of Beans: {{burrito?.beans}}</p>
+    <p matLine> Type of Meat: {{burrito?.meat}}</p>
+    <p matLine> Type of Veggies: {{burrito?.veggies}}</p>
+    <p matLine> Type of Cheese: {{burrito?.cheese}}</p>
+    <p matLine> Sour Cream?: {{burrito?.sourCream}}</p>
+    <p matLine> Calories: {{burrito?.calories}}</p>
+
+    
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="navigateBack()">Return</button>
+  </mat-card-actions>
+</mat-card>

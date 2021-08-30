@@ -1,0 +1,95 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+        <span *ngIf="currentBurrito.id; else elseBlock">{{
+          originalTitle
+        }}</span>
+        <ng-template #elseBlock>Create a Customized Burrito</ng-template>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form
+    [formGroup]="form"
+    #formDirective="ngForm"
+    (ngSubmit)="save(formDirective)"
+  >
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          placeholder="Title"
+          formControlName="title"
+          type="text"
+          name="title"
+        />
+      </mat-form-field>
+
+      
+
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label>Type of Beans</mat-label>
+          <input
+            matInput
+            placeholder="Type of Beans"
+            formControlName="beans"
+            type="text"
+            name="beans"
+          />
+        </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+        <mat-label>Type of Meat</mat-label>
+        <input
+          matInput
+          placeholder="Type of Meat"
+          formControlName="meat"
+          type="text"
+          name="meat"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+        <mat-label>Type of Veggies</mat-label>
+        <input
+          matInput
+          placeholder="Type of Veggies"
+          formControlName="veggies"
+          type="text"
+          name="veggies"
+        />
+      </mat-form-field>
+
+      <section>
+          <mat-checkbox formControlName="sourCream" placeholder="Sour Cream"
+            >Sour Cream?</mat-checkbox
+          >
+        </section>
+
+        <section class="full-width">
+          <mat-label>
+            Calories:
+            {{ this.form.get('calories')?.value }} Calories
+          </mat-label>
+          
+          <mat-slider
+            class="full-width"
+            formControlName="calories"
+            min="0"
+            max="3000"
+            thumbLabel
+            name="calories"
+          ></mat-slider>
+        </section>
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button color="primary">
+        {{ originalTitle ? 'Save' : 'Create' }}
+      </button>
+      <button type="button" mat-button (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@burritos/api-interfaces';
 
 @Component({
   selector: 'burritos-root',
@@ -8,6 +6,9 @@ import { Message } from '@burritos/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  title= 'Burritos';
+  links= [
+    {path: '', icon: 'home', title: 'Home'},
+    {path: 'burritos', icon: 'view_list', title: 'Burritos'}
+  ]
 }

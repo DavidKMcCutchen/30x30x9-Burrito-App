@@ -1,0 +1,24 @@
+{
+  "burritos": [
+    {
+      "id": 1,
+      "title": "Steak Burrito",
+      "beans": "Black Beans",
+      "meat": "Picanha",
+      "veggies": "Pico de Gallo",
+      "cheese": "Cheddar",
+      "sourCream": true,
+      "calories": "1250"
+    },
+    {
+      "id": 2,
+      "title": "Shredded Chicken Burrito",
+      "beans": "Refried Beans",
+      "meat": "Slow Cooked Shredded Chicken",
+      "veggies": "Bell pepper, onion and pico de gallo",
+      "cheese": "",
+      "sourCream": true,
+      "calories": 1553
+    }
+  ]
+}

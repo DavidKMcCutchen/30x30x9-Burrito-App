@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-50" layout="row" layout-align="center center">
+      <burritos-burrito-list
+        [burritos]="allBurritos$ | async"
+        (selected)="selectBurrito($event)"
+        (deleted)="deleteBurrito($event)"
+        (burritoViewed)="viewBurrito($event)"
+      ></burritos-burrito-list>
+    </div>
+    <div class="col-50" layout="row" layout-align="center center">
+      <burritos-burrito-details
+        [burrito]="selectedBurrito$ | async"
+        (saved)="saveBurrito($event)"
+        (cancelled)="resetBurrito()"
+        [form]="form"
+      ></burritos-burrito-details>
+    </div>
+  </div>

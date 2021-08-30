@@ -13,9 +13,17 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
-      "@burritos/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@burritos/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@burritos/core-data": ["libs/core-data/src/index.ts"],
+      "@burritos/core-state": ["libs/core-state/src/index.ts"],
+      "@burritos/environment": ["libs/environment/src/index.ts"],
+      "@burritos/material": ["libs/material/src/index.ts"],
+      "@burritos/theme": ["libs/theme/src/index.ts"],
+      "@burritos/ui-login": ["libs/ui-login/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

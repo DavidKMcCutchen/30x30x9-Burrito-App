@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Burrito Creations</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let burrito of burritos" data-test="burrito-list-item" (click)="selected.emit(burrito)">
+        <h3 matLine>{{burrito.title}}</h3>
+        <p matLine> Type of Beans: {{burrito.beans}}</p>
+        <p matLine> Type of Meat: {{burrito.meat}}</p>
+        <p matLine> Type of Veggies: {{burrito.veggies}}</p>
+        <p matLine> Type of Cheese: {{burrito.cheese}}</p>
+        <p matLine> Sour Cream?: {{burrito.sourCream}}</p>
+        <p matLine> Calories: {{burrito.calories}}</p>
+        
+        <button mat-icon-button (click)="burritoViewed.emit(burrito.id); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">chevron_left</mat-icon>
+        </button>
+
+
+        <button mat-icon-button (click)="deleted.emit(burrito); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
